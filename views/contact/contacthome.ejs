@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+<% Data.forEach(function(el){ %>
+
+    <h4>Contact No.:<%=el.contactNo %> Email Id:<%=el.email %></h4>
+   
+    <% if(currentUser){%>
+    <a href="/contact/<%=el._id%>/edit"><button>Edit</button></a>
+    <form method="POST" action="/contact/<%=el._id%>/delete?_method=DELETE">
+        <button>Delete</button>
+    </form>
+    <% } %>
+    
+    <% }) %>
+<br>
+
+<% if(currentUser){%>
+<a href="/addcontact">Add Contact</a>
+<% } %>
+<br>
+
+
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAEcqUT0xkQFIU1I79JdY891OSafleDxP4'></script><div style='overflow:hidden;height:400px;width:520px;'><div id='gmap_canvas' style='height:400px;width:520px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div> <a href='https://www.embedmap.net/'>embed google map</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=42b78f50e0c5f333934a38733f291071284567a8'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(28.606945676146164,77.02048117853455),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(28.606945676146164,77.02048117853455)});infowindow = new google.maps.InfoWindow({content:'<strong>University School of Information, Communication and Technology</strong><br><br>110078 Dwarka Sector-16<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+<% include ../partials/footer %>

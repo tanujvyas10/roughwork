@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form method="POST" enctype="multipart/form-data" action="/student/addstudent">
+        <label>Name:</label>
+        <input type="text" name="name">
+        <br>
+        <label>enrollement number:</label>
+        <input type="number" name="roll">
+        <br>
+        
+        <label>year of admission:</label>
+        <input type="number" name="admission">
+        <br>
+        <label>email id:</label>
+        <input type="email" name="email">
+        <br>
+        <fieldset>
+            <legend>fee receipt:</legend>
+        <input type="file" name="receipt" accept=".pdf,.docx" multiple />
+        </fieldset>
+        
+        <br>
+        <button>Submit</button>
+        
+        </form>
+</body>
+</html>
+

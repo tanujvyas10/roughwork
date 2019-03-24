@@ -1,0 +1,8 @@
+<% include ../partials/header %>
+<h1>this is contact edit</h1>
+<form method="POST" action="/contact/<%=data._id%>/edit?_method=PUT">
+    <input type="text" name="data[contactNo]" value="<%=data.contactNo%>">
+    <input type="text" name="data[email]" value="<%=data.email%>">
+    <button>Update Contact</button>
+</form> 
+<% include ../partials/footer %>

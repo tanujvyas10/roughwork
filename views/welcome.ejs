@@ -1,0 +1,76 @@
+
+<% include ./partials/header %>
+<!-- <h1 id="welcome">Welcome</h1> -->
+
+
+<header> 
+<div class="main">
+<div class="logo">
+    <img src="/logo.png">
+</div>
+
+        <ul>
+            <li class="active">  <a href="/">Home</a> </li></ul>
+    <ul><li>  <a href="/contacthome">contact Us</a> </li></ul>
+    <ul><li>  <a href="/aboutUs">About us</a> </li></ul>
+   
+   
+
+<% if(currentUser){%>
+    
+    <ul><li> <a href="/admin/customer">Customer care</a>  </li></ul>
+    <ul><li> <a href="/student">Add a student</a> </li></ul>
+    <ul><li> <a href="/logout">Logout</a> </li></ul>
+            <% } %>
+   
+            
+<% if(!currentUser){%>
+    <ul><li>    <a href="/student_personal_detail">Your personal detail</a> </li></ul>
+    <ul><li>  <a href="/customer_care">Customer care</a> </li></ul>
+            
+<% } %>
+
+</div>
+
+<div class="title">
+<h1>Web dev creation</h1>
+</div>
+<div class="button">
+        <a href="/contacthome" class="btn">contact Us</a>
+      <a href="/aboutUs" class="btn">About us</a> 
+</div>
+</header>
+
+
+<% include ./partials/footer %>
+
+<!-- 
+<div id="sidebar">
+<div class="toggle-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+        <ul>
+            <li>  <a href="/">Home</a> </li>
+        <li>  <a href="/contacthome">contact Us</a> </li>
+        <li>  <a href="/aboutUs">About us</a> </li>
+       
+       
+    
+    <% if(currentUser){%>
+        
+        <li> <a href="/admin/customer">Customer care</a>  </li>
+        <li> <a href="/student">Add a student</a> </li>
+        <li> <a href="/logout">Logout</a> </li>
+                <% } %>
+       
+                
+    <% if(!currentUser){%>
+    <li>    <a href="/student_personal_detail">Your personal detail</a> </li>
+    <li>  
+                <a href="/customer_care">Customer care</a> </li>     
+                
+    <% } %> -->
+  

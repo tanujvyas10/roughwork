@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<form method="POST" enctype="multipart/form-data" action="/student/addstudent">
+    <label>Name:</label>
+    <input type="text" name="data[name]" value="<%=data.name%>">
+    <br>
+    <label>enrollement number:</label>
+    <input type="number" name="data[roll]" value="<%=data.roll%>">
+    <br>
+    
+    <label>year of admission:</label>
+    <input type="number" name="data[admission]"value="<%=data.admission%>"> 
+    <br>
+    <label>email id:</label>
+    <input type="email" name="data[email]" value="<%=data.email%>">
+    <br>
+    <fieldset>
+        <legend>fee receipt:</legend>
+    <input type="file" name="data[receipt]" value="<%=data.name%>" accept=".pdf,.docx" multiple />
+    </fieldset>
+    
+    <br>
+    <button>Submit</button>
+    
+    </form>
+<% include ../partials/footer %>

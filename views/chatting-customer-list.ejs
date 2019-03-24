@@ -1,0 +1,8 @@
+<h1>
+    the customer list
+    <% list.forEach(function(e){ %>
+        <h2>
+           <a href="/<%= e._id%>/<%= e.username %>/customer-chatbox"><%= e.username %></a>
+        </h2>
+    <% }) %>
+</h1>

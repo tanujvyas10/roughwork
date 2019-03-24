@@ -1,0 +1,22 @@
+<%include ./partials/header %>
+<h1>Welcome <%=data.name%>!</h1>
+
+<div class="container">
+    <h1><%=data.name%></h1>
+    <h2>Roll:<%=data.roll%> Admission:<%=data.admission%> Email:<%=data.email%> </h2>
+      <!-- <form method="POST" action="/student/<%=data._id%>/fee_receipt">
+   <button>Fee receipt</button>
+  </form>
+     -->
+
+     
+    <button id="btn_download">Download your fee receipt</button>
+  
+    <script>
+         $("#btn_download").click(function(){
+            window.open('/download/<%=data._id%>');
+           })
+     </script> 
+</div>
+
+<% include ./partials/footer %>
