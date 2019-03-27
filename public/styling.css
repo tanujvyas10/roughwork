@@ -1,11 +1,11 @@
 
 
-header{
+/* header{
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(./cartoon-college-campus.jpg);
   height:100vh;
   background-size:cover;
   background-position:center;
-}
+} */
 
 ul{
     float:right;
@@ -18,6 +18,10 @@ ul li{
     margin-top:25px;
 }
 
+.ui.active.button{
+    top:50%;
+    left:50%;
+}
 
 ul li a{
     text-decoration: none;
@@ -28,6 +32,15 @@ border:1px solid transparent;
 
 }
 
+.circular.ui.icon.button{
+    color:green;
+}
+#addStudent{
+    color:rgb(70, 70, 248);
+    margin-top:10%;
+
+   
+}
 ul li a:hover{
     background-color:white;
  color:black;
@@ -335,3 +348,77 @@ footer .container .text-muted {
     color:#fff;
     
 }
+
+
+
+
+
+
+.nav{
+    height:100%;
+    width:0;
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    background-color:#111;
+    opacity:0.9;
+    overflow-x:hidden;
+    padding-top:60px;
+    transition:0.7s;
+
+}
+
+.nav a{
+    display:block;
+    padding:20px 30px;
+    font-size:25px;
+    text-decoration:none;
+    color:#ccc;
+
+}
+.nav a:hover{
+    color:#fff;
+    transition:0.4s;
+   
+}
+
+.nav .close{
+    position:absolute;
+    top:0;
+    right:22px;
+    font-size:30px;
+
+}
+#ham{
+    font-size:30px;
+}
+
+.slide a{
+    color:#000;
+    font-size:30px;
+}
+
+#content{
+    padding:20px;
+    transition:margin-left 0.7s;
+    overflow: hidden;
+    width:100px;
+}
+
+
+body{
+
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    
+    background-image:url(https://www.franchiseindia.com//uploads/content/edu/art/5a1e5dc06b4ff.jpg);
+    background-size:cover;
+    }
+
+#address{
+    text-align :center;
+}
+
+    

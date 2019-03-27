@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/styling.css">
+    <link rel="stylesheet" href="/style2.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
     
-
+<!-- 
     <form method="POST" enctype="multipart/form-data" action="/student/addstudent">
         <label>Name:</label>
         <input type="text" name="name">
@@ -30,8 +35,38 @@
         
         <br>
         <button>Submit</button>
+         <button class="ui inverted green button">POST :)</button>
+</div>
+        </form> -->
+
+
+        <div class="ui main text container segment">
+           
+            <form class="ui form" enctype="multipart/form-data" action="/student/addstudent"  method="POST">
+               <div class="field"> <label>Name:</label>
+                <input type="text" name="name"></div>
+               <div class="field"><label>enrollement number:</label>
+                <input type="number" name="roll"></div>
+                <div class="field">
+                    <label>year of admission:</label>
+                    
+                    <input type="number" name="admission">
+                </div>
+                <div class="field">
+                    <label>email id:</label>
+                    <input type="email" name="email">
+                </div>
+                <div class="field">
+                    <fieldset>
+                        <legend>fee receipt:</legend>
+                    <input type="file" name="receipt" accept=".pdf,.docx" multiple />
+                    </fieldset>
+                </div>
+               <!--- <button class="ui green basic button">POST:)</button> </form>-->
+               <button class="ui inverted green button">POST :)</button>
+            </div>
+            
         
-        </form>
 </body>
 </html>
 

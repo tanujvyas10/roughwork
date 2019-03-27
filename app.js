@@ -608,7 +608,7 @@ io.sockets.on("connection",function(socket){
     // }
     if(pass!=null){
         console.log("inside console.log loading old msg++++++++",pass)
-        var query= Chat.find({ref:pass});
+        var query= Chat.find({});//ref:pass
        query.sort('-created').limit(100).exec(function(err,docs){
             if(err) throw err;
             console.log("all previous chats are::-----",docs)

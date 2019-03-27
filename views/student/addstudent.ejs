@@ -1,5 +1,6 @@
 <% include ../partials/header %>
 
+<div class="ui main text container segment">  
 <form method="POST" enctype="multipart/form-data" action="/student/addstudent">
     <label>Name:</label>
     <input type="text" name="data[name]">
@@ -20,7 +21,11 @@
     </fieldset>
     
     <br>
-    <button>Submit</button>
+    <button class="ui inverted green button">Submit</button>
+</div>
     
     </form>
+</div>
+ 
+
 <% include ../partials/footer %>

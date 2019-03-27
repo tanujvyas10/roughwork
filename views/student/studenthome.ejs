@@ -1,32 +1,46 @@
 <% include ../partials/header %>
-<h1>this is the student home</h1>
-<%data.forEach(function(el){%>
+<a href="/">
+  <button class="circular ui icon button" class="massive ui button">
+    <i class="icon home"></i>
+  </button>
+</a>
+
+<h1>Student Dashboad</h1>
 
 
 <table style="width:100%">
-                <tr>
-                  <th colspan="2"> List of students</th>
-                  <th colspan="2">Edit the details</th>
-                  <th colspan="2">Delete the details</th>
-                  
-                </tr>
+  <tr>
+    <th colspan="2"> List of students</th>
+    <th colspan="2">Edit the details</th>
+    <th colspan="2">Delete the details</th>
+    
+  </tr>
+  <%data.forEach(function(el){%>
+
+                
                 <tr>
                                 <td colspan="3">   <a href="/student/<%=el._id%>/detail"> <h2><%=el.name%></h2></a> </td>
-                              <td> <a href="/student/<%=el._id%>/edit"><button>Edit</button></a>
+                              <td> <a href="/student/<%=el._id%>/edit"><button class="ui inverted primary button">Edit</button></a>
 
-                                <td colspan="3"> <a href="/student/<%=el._id%>/delete"><button>Edit</button></a>
+                                <td colspan="3"> <a href="/student/<%=el._id%>/delete"><button class="ui inverted red button">Delete</button></a>
                               </td>  
                             <!-- <td> <form method="POST" action="/student/<%=el._id%>/delete?_method=DELETE">
                                 <button>Delete</button>
                             </form> </td>    -->
                                  
                 </tr>
+                <% }) %>
               </table>
     
   
    
-<% }) %>
-<a href="/student/addstudent">Add a student</a>
+
+
+<button id="addStudent" class="massive ui button" class="ui active button">
+  <i class="user icon"></i>
+  <a href="/student/addstudent">Add a student</a>
+</button>
+
 
 
 <% include ../partials/footer %>

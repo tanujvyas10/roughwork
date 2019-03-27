@@ -10,8 +10,10 @@
 <title>document</title>
   <link rel="stylesheet" href="/styling.css">
   <link rel="stylesheet" href="/style2.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 </head>
 
 </head>
@@ -20,3 +22,40 @@
     <a href="/welcome">home</a> -->
 
    
+
+    <div id="content">
+        <span class="slide">
+            <a href="#" onclick="openSlideMenu()">
+               <i class="fas fa-bars"></i>
+           </a>
+        </span>
+       
+       
+       <div id="menu" class="nav">
+       <a href="#" class="close" onclick="closeSideMenu()"><i class="fas fa-times"></i></a>
+       
+         <a href="/"><li>Home</li></a> 
+             <a href="/contacthome"><li>Contact Us</li></a> 
+         <a href="/aboutUs"><li>About Us</li></a> 
+          
+          
+       
+       <% if(currentUser){%>
+           
+         <a href="/admin/customer"><li>Customer Care</li></a>  
+            <a href="/student"><li>Add a student</li></a> 
+            <a href="/logout"><li>Logout</li></a> 
+                   <% } %>
+          
+                   
+       <% if(!currentUser){%>
+               <a href="/student_personal_detail"><li>Your Personal Detail</li></a> 
+             <a href="/customer_care"><li>Customer Care</li></a> 
+                   
+       <% } %>
+       
+       </div>
+       
+       
+       </div>
+       
