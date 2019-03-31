@@ -7,18 +7,187 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
 <title>document</title>
-  <link rel="stylesheet" href="/styling.css">
+ 
   <link rel="stylesheet" href="/style2.css">
+ 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <style>
-        body{
-            background-image:url(https://previews.123rf.com/images/emreozbay/emreozbay1508/emreozbay150800008/44221939-group-of-students-outside-on-college-campus.jpg);
+       
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-        }
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+body{
+    font-family: Quicksand,sans-serif;
+}
+
+header{
+    width:100%;
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url("./college2.jpg") no-repeat 50% 50%;
+    background-size:cover;
+}
+
+.content{
+width:90%;
+margin:4em auto;
+font-size:20px;
+line-height:30px;
+text-align:justify;
+    }
+
+    .logo{
+        position:fixed;
+        float:left;
+        margin:16px 36px;
+        color:#fff;
+        font-weight:bold;
+        font-size:24px;
+
+    }
+nav{
+    position:fixed;
+    width:100%
+}
+
+nav ul{
+     list-style:none;
+     background:rgba(0,0,0,0);
+     overflow:hidden;
+     padding:0;
+     text-align:center;
+     margin:0;
+color:#fff;
+text-align:center;
+transition: 1s;
+
+
+}
+
+
+
+nav.black ul{
+    background:#000;
+}
+
+nav ul li{
+    display:inline-block;
+    padding:20px;
+    text-decoration:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-size:20px;
+   
+}
+
+.page-footer{
+    background-color:#000;
+    color:#fff;
+}
+
+.menu-icon{
+    width:100%;
+    background:#000;
+    text-align:right;
+    box-sizing:border-box;
+    padding:15px 24px;
+    cursor:pointer;
+    color:#fff;
+    display:none;
+}
+
+@media(max-width:580px){
+    .logo{
+        position:fixed;
+        top:0;
+        margin-top:16px;
+
+    }
+    nav ul{
+        max-height:0px;
+        background:#000;
+
+    }
+
+    nav.black ul{
+        background:#000;
+    }
+
+    .showing {
+        max-height:20em;
+
+    }
+
+    nav ul li{
+        box-sizing:border-box;
+        width:100%;
+        height:20%;
+        padding:24px 0;
+        text-align:center;
+    }
+
+    .menu-icon{
+        display:block;
+    }
+}
+
+.clgname{
+    color:white;
+    text-align:center;
+    margin-top:50vh;
+}
    </style>
 </head>
 
 <body>
+
+    
+        <div class="wrapper">
+                <header>
+                    <nav>
+                         <div class="menu-icon">
+                           <i class="fa fa-bars fa-2x"></i>                      
+                         </div>
+                         <div class="logo">
+                           EMS
+                         </div>
+                         <div class="menu">
+                           <ul>
+                              <li><a href="/">Home</a> </li>
+                              <li><a href="/contacthome" >Contact Us </a> </li>
+                              <li><a href="/aboutUs">About Us</a> </li>
+       
+                              <% if(currentUser){%>
+                                <li><a href="/admin_suggestions">Suggestion box</a></li>  
+                               <li><a href="/admin/customer">Customer Care</a></li>  
+                                  <li><a href="/student">Add a student</a> </li>
+                                 <li><a href="/logout">Logout</a> </li> 
+                                         <% } %>
+       
+                                         <% if(!currentUser){%>
+                                           <li><a href="/student_personal_detail">Your Personal Detail</a> </li>
+                                     <li> <a href="/customer_care">Customer Care</a> </li>   
+                                               
+                                   <% } %>
+
+                             
+    
+                           </ul>
+
+                         </div>
+
+                    </nav>
+
+    
+                </header>
+            </div>

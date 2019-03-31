@@ -1,6 +1,8 @@
 
 
 
+
+
 <script
   src="http://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -12,16 +14,36 @@
 
 <script>
 
-function openSlideMenu(){
-  document.getElementById("menu").style.width="250px";
-  document.getElementById("content").style.marginLeft="250px";
-}
+// function openSlideMenu(){
+//   document.getElementById("menu").style.width="250px";
+//   document.getElementById("content").style.marginLeft="250px";
+// }
 
-function closeSideMenu(){
-  document.getElementById("menu").style.width="0";
-  document.getElementById("content").style.marginLeft="0";
+// function closeSideMenu(){
+//   document.getElementById("menu").style.width="0";
+//   document.getElementById("content").style.marginLeft="0";
   
-}
+// }
+
+
+//menu toggle-button
+$(document).ready(function(){
+$(".menu-icon").on("click",function(){
+$("nav ul").toggleClass("showing");
+});
+});
+
+
+
+//scrolling effect
+$(window).on("scroll",function(){
+  if($(window).scrollTop()){
+    $('nav').addClass("black");
+  }
+  else{
+    $('nav').removeClass('black');
+  }
+})
 
 </script>
 </body>

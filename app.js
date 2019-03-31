@@ -19,7 +19,7 @@ passportLocalMongoose=require("passport-local-mongoose");
 app.set("view engine","ejs")
 var Contact=require("./models/contactUs")
 var Customer=require("./models/customer")
-
+var Suggestion=require("./models/suggestion");
 
 var upload=require("express-fileupload")
 var middleware=require("./middleware/index")
@@ -222,13 +222,26 @@ app.post("/student/addstudent",function(req,res){
   var roll=req.body.roll
   var email=req.body.email
  var receipt=req.files.receipt.name;
+var Father=req.body.Father;
+var Mother=req.body.Mother;
+var Course=req.body.Course;
+var Semester=req.body.Semester;
+var Percentage=req.body.Percentage;
+var Contact=req.body.Contact;
+var BloodG=req.body.BloodG;
+
+
+
+
+
+
 
  //creating the secretToken
 //  var secretToken = randomstring.generate();
 //  console.log('secretToken', secretToken);
 
 
-   var obj={name:name,roll:roll,admission:admission,email:email,receipt:receipt}
+   var obj={Semester:Semester,name:name,roll:roll,admission:admission,email:email,receipt:receipt,Father:Father,Mother:Mother,Course:Course,BloodG:BloodG,Percentage:Percentage,Contact:Contact}
   console.log(obj)
   
   Student.create(obj,function(err,studentData){
@@ -499,7 +512,41 @@ app.post("/customer_care_register",function(req,res){
 
 })
 
+/*****++++++Suggestion box++++********* */
 
+app.get("/suggestions",function(req,res){
+    res.render("suggestion_box");
+})
+
+
+/******++++++saving suggestions++++++******* */
+
+app.post("/suggestions",function(req,res){
+ Suggestion.create(req.body,function(err,savedData){
+ if(err){
+     console.log(err)
+     res.redirect("/")
+ }else{
+     res.render("suggestion_message");
+ }    
+ })   
+})
+
+
+
+/*******-+++++ADMIN SUGGESTION BOX++++******* */
+app.get("/admin_suggestions",function(req,res){
+    Suggestion.find({},function(err,foundData){
+       if(err)
+       {
+           console.log(err)
+           res.redirect("/")
+       } 
+       else{
+         res.render("admin_suggestion_box",{data:foundData})  
+       }
+    })
+})
 /*****VISITING THE CUSTOMER CARE CHAT PAGE********* */
 app.get("/:id/customer_care_chatPage",function(req,res){
 console.log(req.params.id)
