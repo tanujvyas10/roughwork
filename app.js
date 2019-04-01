@@ -203,10 +203,13 @@ app.get("/student/addstudent",middleware.checkLoggedIn,function(req,res){
 })
 
 app.post("/student/addstudent",function(req,res){
+    console.log("--------*********-----------")
   if(req.files){
-    console.log(req.body)
-    console.log(req.files)
+    console.log("total data---------",req.body)
+    console.log("uploaded fata----------",req.files)
     var file=req.files.receipt,filename=file.name;
+
+
     file.mv("./upload/"+filename,function(err){
         if(err)
         {
@@ -214,6 +217,15 @@ app.post("/student/addstudent",function(req,res){
             res.send(err)
         }
        
+    })
+
+    var file2=req.files.photo,filename2=file2.name;
+    file.mv("./upload/"+filename2,function(err){
+        if(err)
+        {
+            console.log(err);
+            res.send(err)
+        }
     })
   }
 
@@ -229,19 +241,10 @@ var Semester=req.body.Semester;
 var Percentage=req.body.Percentage;
 var Contact=req.body.Contact;
 var BloodG=req.body.BloodG;
+var photo=req.files.photo.name;
 
 
-
-
-
-
-
- //creating the secretToken
-//  var secretToken = randomstring.generate();
-//  console.log('secretToken', secretToken);
-
-
-   var obj={Semester:Semester,name:name,roll:roll,admission:admission,email:email,receipt:receipt,Father:Father,Mother:Mother,Course:Course,BloodG:BloodG,Percentage:Percentage,Contact:Contact}
+   var obj={Semester:Semester,photo:photo,name:name,roll:roll,admission:admission,email:email,receipt:receipt,Father:Father,Mother:Mother,Course:Course,BloodG:BloodG,Percentage:Percentage,Contact:Contact}
   console.log(obj)
   
   Student.create(obj,function(err,studentData){

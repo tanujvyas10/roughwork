@@ -12,6 +12,7 @@ var StudentSchema=new mongoose.Schema({
     email:String,
     Percentage:String,
     Contact:String,
+    photo:String
    
 
 })
