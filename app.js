@@ -125,7 +125,7 @@ app.get("/addcontact",middleware.checkLoggedIn,function(req,res){
         res.render("contact/addcontact.ejs")
 })
 
-
+//5533
 /*--------CONTACT ADDING LOGIC-------- */
 app.post("/addcontact",function(req,res){
 console.log(req.body.data)
