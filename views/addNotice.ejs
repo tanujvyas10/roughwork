@@ -1,0 +1,11 @@
+<% include ./partials/header %>
+
+<h1>Add a notice</h1>
+<form action="/Notice_saved" method="POST">
+    <input type="text" name="description" placeholder="Description">
+    <!-- <button class="btn btn-lg upload-btn" type="button">Upload the notice</button> -->
+    <input type="file" name="Notice" id="upload-file" ></input>
+ <button >Add the notice</button>   
+
+</form>
+<% include ./partials/footer %>

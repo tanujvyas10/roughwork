@@ -1,0 +1,34 @@
+<% include ./partials/header %>
+<a href="/">
+  <button class="circular ui icon button" class="massive ui button">
+    <i class="icon home"></i>
+  </button>
+</a>
+
+<h1>Notices</h1>
+
+<% data.forEach(function(el){ %>
+  <p><%=el.created %></p>
+<h1>description</h1>  <%= el.description %>
+<h2>Notice</h2>  <%= el.Notice %>
+<% }) %>
+
+<% if(currentUser){ %>
+
+
+  <a href="/add_a_notice">Add a notice</a>
+
+
+<% }  %>
+
+
+<% include ./partials/footer %>
+
+
+
+
+
+
+
+
+

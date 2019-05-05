@@ -1,8 +1,7 @@
 <% include ./partials/header %> 
 
 <% data.forEach(function(e){ %>
-    <h1><%= e.submitter %></h1>
-    <h2><%= e.suggestion %></h2>
+    <h1><%= e.submitter%> : <%= e.suggestion %></h1>
 <% }) %>
 
 <% include ./partials/footer %> 

@@ -20,7 +20,7 @@ app.set("view engine","ejs")
 var Contact=require("./models/contactUs")
 var Customer=require("./models/customer")
 var Suggestion=require("./models/suggestion");
-
+var Notices=require("./models/notices");
 var upload=require("express-fileupload")
 var middleware=require("./middleware/index")
 
@@ -509,10 +509,6 @@ app.post("/customer_care_register",function(req,res){
   }
          }   
        })
-
-
- 
-
 })
 
 /*****++++++Suggestion box++++********* */
@@ -570,6 +566,62 @@ app.get("/chatPage",function(req,res){
     res.render("chattingPage")
 })
 
+
+
+/* ************+++++++notices of student and the admin++++++************ */
+app.get("/notices",function(req,res){
+   var query=Notices.find({});
+    query.sort("-created").exec(function(err,data){
+    if(err) throw err;
+    console.log("notice data:",data)
+    res.render("notices",{data:data}); 
+    })
+})
+
+
+
+/************++++updating/add the notice+++++********** */
+app.get("/add_a_notice",function(req,res){
+res.sendFile(__dirname+"/addNotice.html");
+})
+
+
+/*******+++++NOTICE SAVED++++******** */
+app.post("/Notice_saved",function(req,res){
+    console.log("Notice data is:------",req.body);
+
+    console.log("file req........",req.files)
+    if(req.files){
+    var file=req.files.Notice,filename=file.name;    
+    file.mv("./upload/"+filename,function(err){
+        if(err)
+        {
+            console.log(err);
+            res.send(err)
+        }else{
+            console.log("NOTICE UPLOADED SUCCESSFULLY")
+            res.redirect("/notices")
+        }
+    })
+    }
+
+
+    var description=req.body.description;
+    var Notice=req.files.Notice.name;
+
+    var Obj={description:description,Notice:Notice};
+    Notices.create(Obj,function(err,savedData){
+        if(err)
+        {
+            console.log(err)
+            res.redirect("/add_a_notice")
+        }
+        else{
+           console.log("Notice  is created:--",savedData)
+            res.redirect("/notices")
+        }
+    })
+})
 /*********++++chat box from customer side+++++******* */
 
 app.get("/:id/:name/customer-chatbox",function(req,res){
@@ -603,9 +655,7 @@ app.get("/admin/customer",function(req,res){
 })
 
 
-// var server=app.listen(3000,function(){
-//     console.log("Server connected")
-// })
+
 
 
 var server=require("http").createServer(app)
@@ -717,10 +767,4 @@ io.sockets.on("connection",function(socket){
         updateNickname();
     })
 })
-
-
-
-
-
-
 });
