@@ -9,6 +9,7 @@ know about it in detail. It should be present in both admin and student views.
 ii. Contact Us: It should have all the different ways in which one can contact the institute like phone
 number, e-present so that one can navigate there. Google API for locate us used for this. It should also
 be present in both views.
+
 iii. Notices: This will contain all the recent and latest updates regarding the institute like datesheet, any
 important announcement etc. (ONLY ADMIN CAN MANIPULATE THIS SECTION)
 iv. Suggestions: As the name suggests users can add any suggestions that they need improvement
@@ -25,7 +26,7 @@ students that are visible to him only. To view this a login via registered e-mai
 generates an OTP
 AND LOTS MORE....(using node.js express.js html css javascript socket .io bootstrap)
 
-#Steps to run on localhost
+## Steps to run on localhost
 step 1:install node
 step 2:npm install
 step 3:node app.js
